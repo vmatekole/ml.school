@@ -133,3 +133,4 @@ penguins/*.csv
 penguins/*.py
 penguins/code/
 mnist/dataset/
+scratch.ipynb
