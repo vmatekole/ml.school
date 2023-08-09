@@ -135,3 +135,4 @@ penguins/*.py
 penguins/code/
 mnist/dataset/
 mnist/cache/
+mnist/preprocessed_dataset/
