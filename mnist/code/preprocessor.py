@@ -12,11 +12,9 @@ from typing import Tuple
 
 DEFAULT_BASE_DIR = Path('/opt')/'ml'/'processing'
 
-def _preprocess_pipeline(df_data: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
-    
+def _preprocess_pipeline(df_data: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:    
     num_classes = 10
 
-    
     categorical_transformer = Pipeline(
         steps=[
             ('encoder', OneHotEncoder())            
@@ -36,8 +34,9 @@ def _preprocess_pipeline(df_data: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray,
         ]
     )
     data: np.ndarray = pipeline.fit_transform(df_data)
+    # OneHotEncoded
     y_data: np.ndarray = data[:, :num_classes]
-    # Drop onehot coded target variable
+    # Drop OneHotEncoded target variable
     data = np.delete(data,np.arange(num_classes), axis=1)
 
     X_train, X_test_validation, y_data, y_test_validation = train_test_split(data, y_data, test_size=0.2, random_state=7)
@@ -56,6 +55,7 @@ def preprocess(base_dir = None, data_filepath =  DEFAULT_BASE_DIR):
     
     if base_dir is None:
         base_dir = DEFAULT_BASE_DIR
+        
     base_dir = Path(base_dir)
     (base_dir / 'train').mkdir(parents=True, exist_ok=True)
     (base_dir / 'validation').mkdir(parents=True, exist_ok=True)
