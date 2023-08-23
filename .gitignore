@@ -132,5 +132,7 @@ dmypy.json
 penguins/*.sh
 penguins/*.csv
 penguins/*.py
-penguins/code/
 mnist/dataset/
+mnist/cache/
+mnist/preprocessed_dataset/
+.gitignore
