@@ -4,7 +4,7 @@ import sagemaker
 from pathlib import Path
 
 
-BUCKET = "vmate-mlschool3"
+BUCKET = "vmate-mlschool4"
 S3_LOCATION = f"s3://{BUCKET}/penguins"
 DATA_FILEPATH = Path().resolve() / "data.csv"
 
