@@ -135,4 +135,4 @@ penguins/*.py
 mnist/dataset/
 mnist/cache/
 mnist/preprocessed_dataset/
-.gitignore
+architecture.sketch
